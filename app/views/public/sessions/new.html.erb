@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-12 mx-auto">
     <h4 class="d-flex justify-content-left mb-4">ログイン</h4>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_with model: @customer, url: customer_session_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
       <div class="row">
         <div class="col-1"></div>
           <h5 class="text_aligin_left ml-7">会員の方はこちらからログイン</h5>
