@@ -22,7 +22,7 @@
         <%= f.text_field :email, class: "col-4", placeholder: "Magic@gmail.com" %>
       </div>
       <div class="field col-12">
-        <%= f.label :postcode,"郵便番号", class: "col-3" %>
+        <%= f.label :postcode,"郵便番号(ハイフンなし)", class: "col-3" %>
         <%= f.text_field :postcode, class: "col-4", placeholder: "1234567" %>
       </div>
       <div class="field col-12">
@@ -30,7 +30,7 @@
         <%= f.text_field :address, class: "col-7", placeholder: "ホグワーツ" %>
       </div>
       <div class="field col-12">
-        <%= f.label :phone_number,"住所", class: "col-3" %>
+        <%= f.label :phone_number,"電話番号(ハイフンなし)", class: "col-3" %>
         <%= f.text_field :phone_number, class: "col-4", placeholder: "00011112222" %>
       </div>
       <div class="field col-12">
@@ -46,7 +46,7 @@
       </div>
     <% end %>
     </div>
-    <h4>既に登録済みの方はこちらから</h4>
+    <h4>既に登録済みの方</h4>
     <div>
       <%= render "public/shared/links" %>
     </div>
