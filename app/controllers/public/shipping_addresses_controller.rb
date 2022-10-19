@@ -14,6 +14,7 @@ class Public::ShippingAddressesController < ApplicationController
     if @shipping_address.save
       redirect_to shipping_addresses_path, notice: "配送先が追加されました。"
     else
+      @shipping_addresses = current_customer.shipping_addresses
       render :index
     end
   end
