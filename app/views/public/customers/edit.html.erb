@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-1"></div>
-    <h3 class="d-flex justify-content-left mb-5">新規会員登録</h3>
+    <h3 class="d-flex justify-content-left mb-5">会員情報編集</h3>
   </div>
   <%= form_with model: @customer, url: customers_information_path, method: :patch, id: 'new_customer', class: 'new_customer', local: true do |f| %>
     <%= render "public/shared/error_messages", resource: @customer %>
@@ -40,9 +40,11 @@
       <div class="actionss col-3">
         <%= f.submit "更新内容を保存",class: 'btn btn-success btn-md' %>
       </div>
-      <%=link_to "退会する",customers_confirm_path, class: "btn btn-md btn-danger" %>
     </div>
   <% end %>
+  <%=link_to "退会する",customers_confirm_path, class: "btn btn-md btn-danger" %>
+</div>
+  >
 
 
 
