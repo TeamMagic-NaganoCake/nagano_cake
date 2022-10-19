@@ -13,7 +13,7 @@ class Public::CustomersController < ApplicationController
 
   def update
     @customer = current_customer
-    if @customer.update(customers_params)
+    if @customer.update(customer_params)
       redirect_to customers_my_page_path, notice: "会員情報が更新されました。"
     else
       render :edit
@@ -28,7 +28,7 @@ class Public::CustomersController < ApplicationController
 
   private
 
-  def customers_params
+  def customer_params
     params.require(:customer).permit(
       :last_name, :first_name, :last_name_kana, :first_name_kana, :postcode, :address, :phone_number, :email
     )
