@@ -1,5 +1,5 @@
 class Public::CustomersController < ApplicationController
-
+  before_action :authenticate_customer!
 
 
 
@@ -24,6 +24,10 @@ class Public::CustomersController < ApplicationController
   end
 
   def withdraw
+    current_customer.update(customer_status: true)
+    reset_session
+    flash[:notice] = "退会処理が完了しました。"
+    redirect_to about_path
   end
 
   private
