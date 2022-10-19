@@ -1,2 +1,29 @@
-<h1>Admin::Items#index</h1>
-<p>Find me in app/views/admin/items/index.html.erb</p>
+<div class="d-flex justify-content-between">
+  <h4 class="mt-5 mb-5">商品一覧</h4>
+  <%= link_to new_admin_item_path do %>
+    <i class="fas fa-plus mt-5 mb-5" style="color: grey; font-size: 24px;"></i>
+  <% end %>
+</div>
+<table class="table table-hover table-borderless">
+  <thead>
+    <tr class="table-secondary">
+      <th>商品ID</th>
+      <th>商品名</th>
+      <th>税抜価格</th>
+      <th>ジャンル</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= link_to item.item_name, admin_item_path(item) %></td>
+        <td><%= number_with_delimiter item.none_taxed_price %></td>
+        <td><%= item.genre.genre_name %></td>
+        <th><%= render "sale_status", item: item %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @items %>

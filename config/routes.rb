@@ -3,11 +3,11 @@ Rails.application.routes.draw do
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
-    
+
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
-    
+
   scope module: :public do
     root "homes#top"
     get 'about' => "homes#about"
@@ -22,9 +22,9 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create, :index, :show]
     post 'orders/confirm'
     get 'orders/finish'
-    resources :shipping_addreses, only: [:create, :index, :edit, :update, :destroy]
+    resources :shipping_addresses, only: [:create, :index, :edit, :update, :destroy]
   end
-  
+
   namespace :admin do
     root "homes#top"
     resources :items, only: [:new, :create, :index, :show, :edit, :update]
