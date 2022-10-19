@@ -20,6 +20,11 @@ ja:
     attributes:
       genre:
         genre_name: "ジャンル名"
+      item:
+        item_name: "商品名"
+        item_body: "商品説明"
+        genre: "ジャンル"
+        none_taxed_price: "税抜価格"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
