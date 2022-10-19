@@ -15,16 +15,16 @@
         </tbody>
       </table>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-10">
       <h2><strong>商品一覧</strong>(全<%= @items.count %>件)</h2>
-      <div class="d-flex">
+      <div class="d-flex flex-lg-wrap">
       <% @items.each do |item| %>
-        <div class="px-3">
+        <div class="pr-3 pb-5 mt-3">
           <%= link_to item_path(item)  do %>
             <%= image_tag item.item_image, size:"250x150" %>
           <% end %><br>
-          <%= item.item_name %><br>
-          ¥<%= item.taxed_price %>
+          <strong><%= item.item_name %></strong><br>
+          <strong>¥<%= item.taxed_price %></strong>
         </div>
       <% end %>
       </div>
