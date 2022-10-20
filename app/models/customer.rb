@@ -31,4 +31,6 @@ class Customer < ApplicationRecord
   super && (self.customer_status == false)
  end
 
+
+
 end
