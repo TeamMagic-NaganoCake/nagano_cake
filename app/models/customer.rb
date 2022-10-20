@@ -18,6 +18,12 @@ class Customer < ApplicationRecord
   has_many :orders
   has_many :cart_items, dependent: :destroy
 
-
+ def get_status
+    if customer_status == false
+       "有効"
+    else
+       "退会"
+    end
+  end
 
 end

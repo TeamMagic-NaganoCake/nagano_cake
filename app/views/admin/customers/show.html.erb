@@ -34,18 +34,12 @@
           </tr>
           <tr>
             <th scope="row">会員ステータス</th>
-            <td>
-              <% if @customer.customer_status == false %>
-               有効
-              <% else %>
-                退会s
-              <% end %>
-            </td>
+            <td><%= @customer.get_status %></td>
           </tr>
           <tr>
             <th></th>
-            <td><%= link_to "編集する",edit_admin_customer_path, class: "btn btn-success btn-md" %></td>
-            <td><%= link_to "注文履歴一覧を見る",admin_root_path, class: "btn btn-primary btn-md" %></td>
+            <td><%= link_to "編集する", edit_admin_customer_path, class: "btn btn-success btn-md" %></td>
+            <td><%= link_to "注文履歴一覧を見る", admin_root_path, class: "btn btn-primary btn-md" %></td>
           </tr>
         </tbody>
       </table>
