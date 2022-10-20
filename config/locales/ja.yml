@@ -25,6 +25,8 @@ ja:
         item_body: "商品説明"
         genre: "ジャンル"
         none_taxed_price: "税抜価格"
+      cart_item:
+        amount: "個数"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
