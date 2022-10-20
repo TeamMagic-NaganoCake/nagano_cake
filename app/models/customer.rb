@@ -12,12 +12,13 @@ class Customer < ApplicationRecord
   validates :address, presence: :ture
   validates :phone_number, presence: :ture, format:{ with:/\A\d{10,11}\z/, message: "固定電話の場合は市街地局番から入力してください"}
 
-
-
   has_many :shipping_addresses
   has_many :orders
   has_many :cart_items, dependent: :destroy
 
-
+  #退会済みユーザーの識別
+  def active_for_authentication?
+    super && (self.customer_status == false)
+  end
 
 end
