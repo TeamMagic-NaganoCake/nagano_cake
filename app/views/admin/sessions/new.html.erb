@@ -1,6 +1,6 @@
 <p class="d-flex justify-content-center w-25 mb-5", style="background-color: #EEEEEE; font-size: 24px;" ><strong>管理者</strong>ログイン</p>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
   <div class="row justify-content-center mb-3">
     <%= f.label :email, "メールアドレス", class: "col-2" %>
     <%= f.email_field :email, autofocus: true, placeholder: "管理者e-mail", class: "col-4" %>
@@ -15,8 +15,8 @@
   </div>
 
   <div class="actions row mb-5">
-        <div class="col-5"></div>
-          <%= f.submit "ログイン", class: "btn btn-md btn-primary px-5" %>
-      </div>
+    <div class="col-5"></div>
+      <%= f.submit "ログイン", class: "btn btn-md btn-primary px-5" %>
+    </div>
   </div>
 <% end %>
