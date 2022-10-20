@@ -1,2 +1,49 @@
-<h1>Public::Orders#show</h1>
-<p>Find me in app/views/public/orders/show.html.erb</p>
+<div class="row">
+  <div class="col-1"></div>
+  <h3 class="d-flex justify-content-left mb-5">注文履歴詳細</h3>
+</div>
+<table class="tabel table-bordered col-6 px-0">
+  <thead>
+    <tr>
+      <th class="table-active col-2 px-0">注文日</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="table-active col-2 px-0">配送先</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="table-active col-2 px-0">支払方法</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="table-active col-2 px-0">ステータス</th>
+      <td></td>
+    </tr>
+
+
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+        <td>
+          <%= order.order_postcode %><br>
+          <%= order.order_address %><br>
+          <%= order.order_address_name %><br>
+        </td>
+        <td>
+          <%= order.order_items.each do |order_item| %>
+            <%= order_item.item.name %>
+          <% end %>
+        </td>
+        <td><%= order.billing_price.to_s(:delimited)+"円" %></td>
+        <td><%= order.order_status %></td>
+        <td><%= link_to "表示する", order_path(order), class: "btn btn-md btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <table class="table table-bordered col-6">
+
+  </table>
+</table>

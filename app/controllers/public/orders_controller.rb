@@ -16,5 +16,6 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
+    @orders = current_customer.orders
   end
 end
