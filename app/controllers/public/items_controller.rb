@@ -8,9 +8,6 @@ class Public::ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def new
-  end
-
   private
   def item_params
     params.require(:item).permit(:item_image, :item_name, :item_body, :genre_id, :none_taxed_price, :sale_status)

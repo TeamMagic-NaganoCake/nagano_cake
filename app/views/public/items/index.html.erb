@@ -1,4 +1,4 @@
-<div class="contaoner">
+<div class="container">
   <div class="row d-flex">
     <div class="col-lg-2">
       <table class="table table-bordered table-hover">
@@ -21,7 +21,7 @@
       <% @items.each do |item| %>
         <div class="pr-3 pb-5 mt-3">
           <%= link_to item_path(item)  do %>
-            <%= image_tag item.item_image, size:"250x150" %>
+            <%= image_tag item.get_image(250, 150) %>
           <% end %><br>
           <strong><%= item.item_name %></strong><br>
           <strong>¥<%= item.taxed_price %></strong>
