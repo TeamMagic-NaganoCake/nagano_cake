@@ -44,10 +44,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
     customers_my_page_path
   end
 
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   new_customer_session_path
-  # end
+
 
   protected
 
@@ -63,5 +60,9 @@ class Public::RegistrationsController < Devise::RegistrationsController
   #   devise_parameter_sanitizer.permit(:account_update, keys: [])
   # end
 
+  # The path used after sign up for inactive accounts.
+  # def after_inactive_sign_up_path_for(resource)
+  #   new_customer_session_path
+  # end
 
 end

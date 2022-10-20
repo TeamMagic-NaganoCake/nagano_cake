@@ -32,16 +32,14 @@
       </tr>
     </thead>
     <tbody>
-      <% if @shipping_addresses %>
-        <% @shipping_addresses.each do |shipping_addresses| %>
-          <tr>
-            <td><%= shipping_addresses.postcode %></td>
-            <td><%= shipping_addresses.address %></td>
-            <td><%= shipping_addresses.address_name %></td>
-            <td><%= link_to "編集する", edit_shipping_address_path(shipping_addresses) ,class: "btn btn-md btn-success "%></td>
-            <td><%= link_to "削除する", shipping_address_path(shipping_addresses) ,method: :delete, class: "btn btn-md btn-danger" %></td>
-          </tr>
-        <% end %>
+      <% @shipping_addresses.each do |shipping_address| %>
+        <tr>
+          <td><%= shipping_address.postcode %></td>
+          <td><%= shipping_address.address %></td>
+          <td><%= shipping_address.address_name %></td>
+          <td><%= link_to "編集する", edit_shipping_address_path(shipping_address) ,class: "btn btn-md btn-success "%></td>
+          <td><%= link_to "削除する", shipping_address_path(shipping_address) ,method: :delete, class: "btn btn-md btn-danger" %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
