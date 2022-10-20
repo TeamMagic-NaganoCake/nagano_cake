@@ -24,7 +24,7 @@
             <%= image_tag item.get_image(250, 150) %>
           <% end %><br>
           <strong><%= item.item_name %></strong><br>
-          <strong>¥<%= item.taxed_price %></strong>
+          <strong>¥<%= number_with_delimiter item.taxed_price %></strong>
         </div>
       <% end %>
       </div>

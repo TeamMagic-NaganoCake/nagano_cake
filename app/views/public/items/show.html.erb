@@ -21,7 +21,7 @@
             <div class="d-inline-block mx-3">
                 <h2><%= @item.item_name %></h2>
                 <h3><%= @item.item_body %></h3>
-                <h3><%= @item.taxed_price %>(税込)</h3>
+                <h3><%= number_with_delimiter @item.taxed_price %>(税込)</h3>
                 <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
                     <%= f.hidden_field :item_id, :value => @item.id %>
                     <%= f.select :amount, *[1..10], include_blank: "個数選択" %>
