@@ -69,7 +69,7 @@
           <td><%= order_item.items.name %></td>
           <td><%= number_with_delimiter order_items.nochange_taxed_price %></td>
           <td><%= order_items.amount %></td>
-          <td><%= number_with_delimiter order_items.amount * order_items.nochange_taxed_price %></td>
+          <td><%= number_with_delimiter(order_items.amount * order_items.nochange_taxed_price) %></td>
         </tr>
       <% end %>
     </tbody>
