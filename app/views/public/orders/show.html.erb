@@ -20,7 +20,7 @@
         <th class="table-active col-3 pl-1">配送先</th>
         <td>
           <p class="mb-0">
-            <%= @order.order_postcode %><br>
+            〒<%= @order.order_postcode %><br>
             <%= @order.order_address %><br>
             <%= @order.order_address_name %>
           </p>
@@ -64,12 +64,12 @@
       </tr>
     </thead>
     <tbody>
-      <%= @order_itmes.each do |order_item| %>
+      <% @order_items.each do |order_item| %>
         <tr>
-          <td><%= order_item.items.name %></td>
-          <td><%= number_with_delimiter order_items.nochange_taxed_price %></td>
-          <td><%= order_items.amount %></td>
-          <td><%= number_with_delimiter(order_items.amount * order_items.nochange_taxed_price) %></td>
+          <td><%= order_item.item.item_name %></td>
+          <td><%= number_with_delimiter order_item.nochange_taxed_price %></td>
+          <td><%= order_item.amount %></td>
+          <td><%= number_with_delimiter(order_item.amount * order_item.nochange_taxed_price) %></td>
         </tr>
       <% end %>
     </tbody>
