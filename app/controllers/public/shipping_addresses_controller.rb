@@ -18,7 +18,6 @@ class Public::ShippingAddressesController < ApplicationController
       flash[:notice] = "配送先が追加されました。"
     else
       @shipping_addresses = current_customer.shipping_addresses
-      binding.pry
       render :index
     end
   end
