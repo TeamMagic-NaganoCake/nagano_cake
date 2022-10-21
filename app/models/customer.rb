@@ -24,6 +24,13 @@ class Customer < ApplicationRecord
     else
        "退会"
     end
-  end
+ end
+
+ #退会済みユーザーの識別
+ def active_for_authentication?
+  super && (self.customer_status == false)
+ end
+
+
 
 end
