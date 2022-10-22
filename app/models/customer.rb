@@ -25,6 +25,7 @@ def get_status
        "退会"
     end
  end
+
  #退会済みユーザーの識別
  def active_for_authentication?
   super && (self.customer_status == false)
