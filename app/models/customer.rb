@@ -18,7 +18,7 @@ class Customer < ApplicationRecord
   has_many :orders
   has_many :cart_items, dependent: :destroy
 
- def get_status
+def get_status
     if customer_status == false
        "有効"
     else
@@ -30,7 +30,5 @@ class Customer < ApplicationRecord
  def active_for_authentication?
   super && (self.customer_status == false)
  end
-
-
 
 end
