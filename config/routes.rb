@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create, :index, :show]
     post 'orders/confirm'
     resources :shipping_addresses, only: [:create, :index, :edit, :update, :destroy]
+    get "searches" => "searches#search"
   end
 
   namespace :admin do
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:show, :update]
     resources :order_items, only: [:update]
+    get "searches" => "searches#search"
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

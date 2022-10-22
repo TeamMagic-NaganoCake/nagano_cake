@@ -28,7 +28,6 @@ class Public::OrdersController < ApplicationController
 
     @cart_items = current_customer.cart_items
     @total = @cart_items.inject(0){|sum, item| sum + item.item_total_price}
-    @order.postage = 800
     @order.billing_price = @total + @order.postage
   end
 
@@ -37,7 +36,6 @@ class Public::OrdersController < ApplicationController
 
   def create
     @order = current_customer.orders.new(order_params)
-    @order.postage = 800
     @order.billing_price = params[:order][:billing_price]
     @order.save
     @cart_items = current_customer.cart_items

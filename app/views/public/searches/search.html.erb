@@ -13,7 +13,7 @@
       </table>
     </div>
     <div class="col-lg-10">
-      <h2><strong>商品一覧</strong>(全<%= @items.count %>件)</h2>
+      <h2><strong><%= @search_name %>一覧</strong>(全<%= @items.count %>件)</h2>
       <div class="d-flex flex-lg-wrap">
       <% @items.each do |item| %>
         <div class="pr-3 pb-5 mt-3">

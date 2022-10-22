@@ -11,7 +11,8 @@
   </head>
 
   <body>
-    <main>
+    <%= render 'layouts/header' %>
+    <main class="vh-100">
       <p id="notice"><%= notice %></p>
       <div class='container'>
         <div class='row'>
@@ -21,5 +22,6 @@
         </div>
       </div>
     </main>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
