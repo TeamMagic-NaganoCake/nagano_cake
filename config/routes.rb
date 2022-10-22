@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create, :index, :show]
     post 'orders/confirm'
     resources :shipping_addresses, only: [:create, :index, :edit, :update, :destroy]
+    get "searches" => "searches#search"
   end
 
   namespace :admin do
