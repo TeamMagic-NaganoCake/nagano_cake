@@ -19,11 +19,15 @@ class Customer < ApplicationRecord
   has_many :cart_items, dependent: :destroy
 
 def get_status
-  if customer_status == false
-    "有効"
-  else
-    "退会"
-  end
-end
+    if customer_status == false
+       "有効"
+    else
+       "退会"
+    end
+ end
+ #退会済みユーザーの識別
+ def active_for_authentication?
+  super && (self.customer_status == false)
+ end
 
 end
