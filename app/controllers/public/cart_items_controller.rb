@@ -39,6 +39,7 @@ class Public::CartItemsController < ApplicationController
         redirect_to cart_items_path
       else
         @item = Item.find(cart_item_params[:item_id])
+        @genres = Genre.all
         render "public/items/show"
       end
     end
