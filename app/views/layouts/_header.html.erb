@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #800000;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-     <%= image_tag 'nagano_cake_logo.png', size: '150x90' %>
-    </a>
+     <%= link_to root_path do %>
+       <%= image_tag 'nagano_cake_logo.png', size: '150x90', class: "navbar-brand" %>
+     <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-        <% if admin_signed_in?%>
+        <% if admin_signed_in? %>
           <li class="nav-item">
             <%= link_to "商品一覧", admin_items_path, class: 'nav-link text-light' %>
           </li>
