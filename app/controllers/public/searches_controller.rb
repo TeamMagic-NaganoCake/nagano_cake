@@ -1,7 +1,14 @@
 class Public::SearchesController < ApplicationController
   def search
-    @genre_name = params[:content]
     @genres = Genre.all
-    @items = Kaminari.paginate_array(Genre.search_for(params[:content])).page(params[:page])
+    model = params[:model]
+    @search_name = params[:content]
+    if model == "genre"
+      @items = Kaminari.paginate_array(Genre.search_for(@search_name)).page(params[:page])
+    elsif model == "item"
+       @items = Kaminari.paginate_array(Item.search_for(@search_name)).page(params[:page])
+    else
+      @item = Item.all
+    end
   end
 end

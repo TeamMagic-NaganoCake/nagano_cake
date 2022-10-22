@@ -21,4 +21,8 @@ class Item < ApplicationRecord
     tax = 1.1
     (none_taxed_price * tax).floor
   end
+
+  def self.search_for(content)
+    Item.where("item_name LIKE?", "#{content}")
+  end
 end

@@ -8,9 +8,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @genres.each do |genre| %>
-            <tr><td><%= link_to genre.genre_name, searches_path(content: genre.genre_name), class: "text-dark text-decoration-none" %></td></tr>
-          <% end %>
+          <%= render "public/items/genre_search", genres: @genres %>
         </tbody>
       </table>
     </div>
