@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'searches/search'
+  end
   devise_for :customers,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
@@ -23,6 +26,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create, :index, :show]
     post 'orders/confirm'
     resources :shipping_addresses, only: [:create, :index, :edit, :update, :destroy]
+    get "searches" => "searches#search"
   end
 
   namespace :admin do
