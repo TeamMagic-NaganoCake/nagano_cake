@@ -25,13 +25,17 @@ class Public::CartItemsController < ApplicationController
 
   def create
     if current_customer.cart_items.find_by(item_id: cart_item_params[:item_id])
-      @cart_item = current_customer.cart_items.find_by(item_id: cart_item_params[:item_id])
-      @cart_item.amount = @cart_item.amount + cart_item_params[:amount].to_i
-      if @cart_item.save
-        redirect_to cart_items_path
-      else
-       @item = Item.find(cart_item_params[:item_id])
+      if cart_item_params[:amount].empty?
+        @item = Item.find(cart_item_params[:item_id])
+        @genres = Genre.all
+        @cart_item = CartItem.new
+        @cart_item.errors[:base] <<  "個数を入力してください"
         render "public/items/show"
+      else
+        @cart_item = current_customer.cart_items.find_by(item_id: cart_item_params[:item_id])
+        @cart_item.amount = @cart_item.amount + cart_item_params[:amount].to_i
+        @cart_item.save
+        redirect_to cart_items_path
       end
     else
       @cart_item = current_customer.cart_items.new(cart_item_params)

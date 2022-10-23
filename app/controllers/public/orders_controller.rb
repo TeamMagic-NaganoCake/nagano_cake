@@ -22,6 +22,7 @@ class Public::OrdersController < ApplicationController
         @order.order_address = params[:order][:order_address]
         @order.order_address_name = params[:order][:order_address_name]
       else
+        @order.errors[:base] <<  "新しいお届け先を入力してください"
         render :new
       end
     end
