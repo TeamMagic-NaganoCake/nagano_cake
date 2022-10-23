@@ -53,11 +53,11 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @order_items = @order.order_items
+    @order_items = @order.order_items.all
   end
 
   private
   def order_params
-    params.require(:order).permit(:payment, :order_postcode, :order_address, :order_address_name)
+    params.require(:order).permit(:payment, :order_postcode, :order_address, :order_address_name, :billing_price)
   end
 end
