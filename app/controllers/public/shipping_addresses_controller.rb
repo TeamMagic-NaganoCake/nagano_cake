@@ -11,12 +11,13 @@ class Public::ShippingAddressesController < ApplicationController
   end
 
   def create
-    @shipping_address = current_customer.shipping_addresses.new(shipping_address_params)
+    @shipping_address = ShippingAddress.new(shipping_address_params)
+    @shipping_address.customer_id = current_customer.id
     if @shipping_address.save
       redirect_to shipping_addresses_path
       flash[:notice] = "配送先が追加されました。"
     else
-      @shipping_addresses = current_customer.shipping_addresses.all
+      @shipping_addresses = current_customer.shipping_addresses
       render :index
     end
   end
