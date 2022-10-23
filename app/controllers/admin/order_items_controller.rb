@@ -4,10 +4,10 @@ class Admin::OrderItemsController < ApplicationController
     order = order_item.order
     order_items = order.order_items
     order_item.update(order_item_params)
-    if  order_items.find_by(manufacture_status: 2)
-      order.update(order_status: 2)
-    elsif order_items.where(manufacture_status: 3).count == order_items.count
-      order.update(order_status: 3)
+    if  order_items.find_by(manufacture_status: "manufacturing")
+      order.update(order_status: "producting")
+    elsif order_items.where(manufacture_status: "manufactured").count == order_items.count
+      order.update(order_status: "shipping_preparation")
     end
     redirect_to admin_order_path(order_item.order_id)
   end
