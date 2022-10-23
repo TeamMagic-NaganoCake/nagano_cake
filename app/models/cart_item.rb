@@ -8,4 +8,12 @@ class CartItem < ApplicationRecord
   def item_total_price
     amount * item.taxed_price
   end
+
+  def amount_options
+    options = []
+    (self.amount + 11).times do |count|
+      options << [count, count]
+    end
+    return options
+  end
 end
