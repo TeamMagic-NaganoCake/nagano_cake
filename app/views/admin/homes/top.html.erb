@@ -27,12 +27,12 @@
           <td>
             <% total_amount = 0 %>
             <% order.order_items.each do |order_items| %>
-              <% amounts=order_items.amount %>
+              <% amounts = order_items.amount %>
               <% total_amount += amounts %>
             <% end %>
             <%= total_amount %>
           </td>
-          <td><%= order.order_status_i18n %></td>s
+          <td><%= order.order_status_i18n %></td>
         </tr>
       <% end %>
     </tbody>

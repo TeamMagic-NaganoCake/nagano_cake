@@ -64,12 +64,7 @@
   <table class="table-borderless col-2">
     <tr>
       <th>商品合計</th>
-          <% total = 0 %>
-          <% @order_items.each do |order_item| %>
-            <% sub_total = order_item.nochange_taxed_price * order_item.amount %>
-            <% total += sub_total %>
-          <% end %>
-      <td><%= number_with_delimiter(total.to_s) + "円" %></td>
+      <td><%= number_with_delimiter(@order.billing_price - @order.postage).to_s + "円" %></td>
     </tr>
     <tr>
       <th>送料</th>
