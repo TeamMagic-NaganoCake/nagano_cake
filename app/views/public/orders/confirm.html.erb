@@ -73,7 +73,7 @@
     <%= f.hidden_field :order_address_name, :value => @order.order_address_name %>
   </div>
   <div class="form-group">
-    <%= f.hidden_field :billing_price, :value => @total %>
+    <%= f.hidden_field :billing_price, :value => @order.billing_price %>
   </div>
   <div class="form-group text-center">
     <%= f.submit "注文を確定する", class: "btn btn-success" %>
