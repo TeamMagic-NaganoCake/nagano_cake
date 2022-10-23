@@ -21,6 +21,9 @@ ja:
       customer:
         signed_in: "ログインに成功しました。"
         signed_out: "ログアウトしました。"
+    registrations:
+      customer:
+        signed_up: "サインアップに成功しました。"
   activerecord:
     attributes:
       customer:
