@@ -1,4 +1,5 @@
 class Admin::OrderItemsController < ApplicationController
+  layout "admin_application"
   def update
     order_item = OrderItem.find(params[:id])
     order = order_item.order
