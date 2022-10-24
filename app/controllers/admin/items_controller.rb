@@ -1,4 +1,5 @@
 class Admin::ItemsController < ApplicationController
+  layout "admin_application"
   def index
     @items = Item.page(params[:page])
   end

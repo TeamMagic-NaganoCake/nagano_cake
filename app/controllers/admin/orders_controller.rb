@@ -1,7 +1,8 @@
 class Admin::OrdersController < ApplicationController
+  layout "admin_application"
   def index
     @customer = Customer.find(params[:id])
-    @orders = @customer.orders.page(params[:page])
+    @orders = @customer.orders.page(params[:page]).order(created_at: :desc)
   end
   def show
     @order = Order.find(params[:id])
@@ -9,9 +10,13 @@ class Admin::OrdersController < ApplicationController
   end
 
   def update
-    @order = Order.find(params[:id])
-    @order.update(order_params)
-    redirect_to admin_order_path(@order)
+    order = Order.find(params[:id])
+
+    order.update(order_params)
+    if  order.order_status == "payment_comfirmation"
+      order.order_items.update_all(manufacture_status: "waiting_for_manufacture")
+    end
+    redirect_to admin_order_path(order)
   end
 
 

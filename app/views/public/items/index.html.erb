@@ -1,5 +1,4 @@
-<div class="container">
-  <div class="row d-flex">
+  <div class="row d-flex mt-3">
     <div class="col-lg-2">
       <table class="table table-bordered table-hover">
         <thead>
@@ -16,16 +15,15 @@
       <h2><strong>商品一覧</strong>(全<%= @items.count %>件)</h2>
       <div class="d-flex flex-lg-wrap">
       <% @items.each do |item| %>
-        <div class="pr-3 pb-5 mt-3">
+        <div class="pr-3">
           <%= link_to item_path(item)  do %>
             <%= image_tag item.get_image(250, 150) %>
-          <% end %><br>
-          <strong><%= item.item_name %></strong><br>
-          <strong>¥<%= number_with_delimiter item.taxed_price %></strong>
+          <% end %>
+          <p class="mt-2"><strong><%= item.item_name %></strong></p>
+          <p><strong>¥<%= number_with_delimiter item.taxed_price %></p></strong>
         </div>
       <% end %>
       </div>
     </div>
     <%= paginate @items %>
   </div>
-</div>
