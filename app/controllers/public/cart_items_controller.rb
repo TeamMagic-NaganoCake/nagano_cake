@@ -2,7 +2,7 @@ class Public::CartItemsController < ApplicationController
   before_action :authenticate_customer!
   def index
     @cart_items = current_customer.cart_items
-    @total = @cart_items.inject(0){|sum, item| sum + item.item_total_price}
+    @total_price = CartItem.total_price(current_customer)
   end
 
   def update

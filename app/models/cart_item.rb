@@ -16,4 +16,8 @@ class CartItem < ApplicationRecord
     end
     return options
   end
+
+  def self.total_price(customer)
+    CartItem.where(customer_id: customer.id).inject(0){|sum, item| sum + item.item_total_price}
+  end
 end
