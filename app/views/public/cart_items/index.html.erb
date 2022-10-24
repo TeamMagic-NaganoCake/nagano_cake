@@ -37,7 +37,7 @@
   </table>
 
 <div class="d-flex">
-  <%= link_to "買い物を続ける", items_path, class: "btn btn-primary h-50" %>
+  <%= link_to "買い物を続ける", root_path, class: "btn btn-primary h-50" %>
     <div class="col-4 ml-auto">
       <table class="table border-dark table-bordered">
         <tbody>
@@ -57,6 +57,6 @@
   <% else %>
     <div class="mx-auto">
       ショッピングカートは空です。
-      <%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %>
+      <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
     </div>
   <% end %>
