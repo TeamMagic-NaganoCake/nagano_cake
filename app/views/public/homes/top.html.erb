@@ -12,12 +12,14 @@
       </table>
     </div>
     <div class="col-lg-10">
-      <h3 class="text-center">
-        ようこそ、ながのCAKEへ！<br>
-        このサイトは、ケーキ販売のECサイトになります。<br>
-        会員でない方も商品の閲覧はできますが、<br>
-        購入には会員登録が必要になります。
-      </h3>
+      <div class="top_bg d-flex align-items-center justify-content-center text-light">
+        <h3 class="text-center">
+          ようこそ、ながのCAKEへ！<br>
+          このサイトは、ケーキ販売のECサイトになります。<br>
+          会員でない方も商品の閲覧はできますが、<br>
+          購入には会員登録が必要になります。
+        </h3>
+      </div>
       <h2>新着商品</h2>
       <div class="d-flex">
       <% @items.last(4).each do |item| %>

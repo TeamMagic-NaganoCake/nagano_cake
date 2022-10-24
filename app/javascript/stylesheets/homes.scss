@@ -1,0 +1,23 @@
+.about_bg{
+  background-image: url('../../assets/images/about_background_image.jpg');
+  height: 500px;
+}
+
+.filter{
+  height: 500px;
+   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.top_bg{
+  height: 300px;
+  background-image: url('../../assets/images/top_background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+h3{
+  text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+                  -1px 1px 0 #000, 1px -1px 0 #000,
+                  0px 1px 0 #000,  0 -1px 0 #000,
+                  -1px 0 0 #000, 1px 0 0 #000;
+}
