@@ -3,45 +3,11 @@
     <div class="col-1"></div>
     <h3 class="d-flex justify-content-left mb-5">配送先登録/一覧</h3>
   </div>
-  <%= form_with model: @shipping_address do |f| %>
+  <div class="errors">
     <%= render "layouts/errors", obj: @shipping_address %>
-    <div class="field row mb-2">
-      <%= f.label :postcode,"郵便番号(ハイフンなし)", class: "col-3" %>
-      <%= f.text_field :postcode, class: "col-3", placeholder: "1234567" %>
-    </div>
-    <div class="field row mb-2">
-      <%= f.label :address,"住所", class: "col-3" %>
-      <%= f.text_field :address, class: "col-5", placeholder: "ホグワーツ" %>
-    </div>
-    <div class="field row mb-5">
-      <%= f.label :address_name,"宛名", class: "col-3" %>
-      <%= f.text_field :address_name, class: "col-3", placeholder: "宛名" %>
-      <div class="col-2"></div>
-      <div class="actionss col-3 px-0">
-        <%= f.submit "新規登録",class: 'btn btn-success btn-md' %>
-      </div>
-    </div>
-  <% end %>
-  <table class="table table-bordered col-8 mt-5">
-    <thead>
-      <tr class="table-active">
-        <th class="col-2">郵便番号</th>
-        <th class="col-4">住所</th>
-        <th class="col-2">宛名</th>
-        <th class="col-4" colspan="2"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @shipping_addresses.each do |shipping_address| %>
-        <tr>
-          <td><%= shipping_address.postcode %></td>
-          <td><%= shipping_address.address %></td>
-          <td><%= shipping_address.address_name %></td>
-          <td><%= link_to "編集する", edit_shipping_address_path(shipping_address) ,class: "btn btn-md btn-success "%></td>
-          <td><%= link_to "削除する", shipping_address_path(shipping_address) ,method: :delete, class: "btn btn-md btn-danger" %></td>
-
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  </div>
+  <%= render "form", shipping_address: @shipping_address %>
+  <div id="address_index">
+    <%= render "index", shipping_addresses: @shipping_addresses %>
+  </div>
 </div>
