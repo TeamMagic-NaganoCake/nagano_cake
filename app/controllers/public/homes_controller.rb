@@ -5,5 +5,6 @@ class Public::HomesController < ApplicationController
   end
 
   def about
+    render :layout => 'about'
   end
 end
