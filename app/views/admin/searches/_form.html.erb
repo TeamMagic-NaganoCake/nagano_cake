@@ -1,4 +1,4 @@
-<%= form_with url: admin_searches_path, method: :get do |f| %>
+<%= form_with url: admin_searches_path, method: :get, class: "bg-white" do |f| %>
 <div class="input-group">
   <%= f.text_field :content, placeholder: "Search", class: "form-control rounded-0 border-0" %>
    <%= button_tag type: "submit", class: "search_icon btn rounded-0 border-0 input-group-btn" do %>
