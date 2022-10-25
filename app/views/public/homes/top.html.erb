@@ -29,11 +29,11 @@
           <%= link_to item_path(item)  do %>
             <%= image_tag item.get_image(250, 150) %>
           <% end %><br>
-          <strong><%= item.item_name %></strong><br>
-          <strong>¥<%= number_with_delimiter item.taxed_price %></strong>
+          <h6><strong><%= item.item_name %></strong></h6><br>
+          <h6><strong>¥<%= number_with_delimiter item.taxed_price %></h6></strong>
         </div>
        <% end %>
        </div>
-       <%= link_to "全ての商品を見る>", items_path %>
+       <h6><%= link_to "全ての商品を見る>", items_path %></h6>
     </div>
 </div>

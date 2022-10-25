@@ -1,4 +1,4 @@
-<div class="row d-flex mt-3">
+<div class="row d-flex my-3">
   <h4>ショッピングカート</h4>
   <% unless @cart_items.empty? %>
   <div class="ml-auto">
@@ -37,7 +37,7 @@
   </table>
 
 <div class="d-flex">
-  <%= link_to "買い物を続ける", root_path, class: "btn btn-primary h-50" %>
+  <%= link_to "買い物を続ける", root_path, class: "btn btn-primary h-50 btn-md" %>
     <div class="col-4 ml-auto">
       <table class="table border-dark table-bordered">
         <tbody>
@@ -55,8 +55,8 @@
 </div>
 
   <% else %>
-    <div class="mx-auto">
+    <div class="mx-auto field">
       ショッピングカートは空です。
-      <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+      <%= link_to "買い物を続ける", root_path, class: "btn btn-primary btn-md" %>
     </div>
   <% end %>

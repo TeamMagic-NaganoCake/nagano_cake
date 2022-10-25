@@ -2,7 +2,12 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); //Dancing Script
 @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap'); //Sawarabi Mincho
-@import 'homes.scss'
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap'); //Sawarabi Gothic
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
+@import 'font.scss';
+@import 'homes.scss';
+@import 'footer.scss';
+@import 'header.scss';
 
 // main{
 //   min-height: 100vh;

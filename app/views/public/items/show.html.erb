@@ -24,7 +24,7 @@
     <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
     <%= f.hidden_field :item_id, :value => @item.id %>
     <%= f.select :amount, *[1..10], {include_blank: "個数選択"}, {class: "mt-3 custom-select-sm"} %>
-    <%= f.submit 'カートに入れる', class: "btn btn-success ml-5" %>
+    <%= f.submit 'カートに入れる', class: "btn btn-success btn-md ml-5" %>
   <% end %>
   </div>
 </div>
