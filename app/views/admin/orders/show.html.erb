@@ -37,20 +37,10 @@
         <th>数量</th>
         <th>小計</th>
         <th>製作ステータス</th>
-        <th></th>
       </tr>
     </thead>
-    <tbody>
-      <% @order_items.each do |order_item| %>
-        <tr>
-          <td><%= order_item.item.item_name %></td>
-          <td><%= order_item.nochange_taxed_price %></td>
-          <td><%= order_item.amount %></td>
-          <td><%= number_with_delimiter(order_item.nochange_taxed_price * order_item.amount) %></td>
-          <td class="manufacture_status_<%= order_item.id %>">
-            <%= render "manufacture_status", order_item: order_item %>
-        </tr>
-      <% end %>
+    <tbody class="manufacture_status">
+      <%= render "order_item_table", order_items: @order_items %>
     </tbody>
   </table>
   <div class="col-1"></div>
