@@ -23,11 +23,8 @@
   </tr>
   <tr>
     <th>注文ステータス</th>
-    <td>
-      <%= form_with model: @order, url: admin_order_path(@order), method: :patch do |f| %>
-        <%= f.select :order_status, Order.order_statuses.keys.map {|k| [I18n.t("enums.order.order_status.#{k}"), k]} %>
-        <%= f.submit "更新", class: "btn btn-sm btn-success ml-3" %>
-      <% end %>
+    <td id="order_status">
+      <%= render "order_status", order: @order %>
     </td>
   </tr>
 </table>
@@ -50,12 +47,8 @@
           <td><%= order_item.nochange_taxed_price %></td>
           <td><%= order_item.amount %></td>
           <td><%= number_with_delimiter(order_item.nochange_taxed_price * order_item.amount) %></td>
-          <%= form_with model: order_item, url: admin_order_item_path(order_item), method: :patch do |f| %>
-            <td>
-              <%= f.select :manufacture_status, OrderItem.manufacture_statuses.keys.map {|k| [I18n.t("enums.order_item.manufacture_status.#{k}"), k]} %>
-            </td>
-            <td><%= f.submit "更新", class: "btn btn-sm btn-success" %></td>
-          <% end %>
+          <td class="manufacture_status_<%= order_item.id %>">
+            <%= render "manufacture_status", order_item: order_item %>
         </tr>
       <% end %>
     </tbody>

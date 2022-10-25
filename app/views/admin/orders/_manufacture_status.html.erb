@@ -1,0 +1,5 @@
+<%= form_with model: order_item, url: admin_order_item_path(order_item), method: :patch, local: false do |f| %>
+  <%= f.select :manufacture_status, OrderItem.manufacture_statuses.keys.map {|k| [I18n.t("enums.order_item.manufacture_status.#{k}"), k]} %>
+  </td>
+  <td><%= f.submit "更新", class: "btn btn-sm btn-success" %></td>
+<% end %>
