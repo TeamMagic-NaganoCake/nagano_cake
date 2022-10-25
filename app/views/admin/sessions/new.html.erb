@@ -1,22 +1,21 @@
-<p class="d-flex justify-content-center w-25 mb-5", style="background-color: #EEEEEE; font-size: 24px;" ><strong>管理者</strong>ログイン</p>
+<div class="row mt-3">
+  <div class="col-12 mx-auto">
+    <h4 class="d-flex justify-content-left mb-3"><strong>管理者</strong>ログイン</h4>
 
-<%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
-  <div class="row justify-content-center mb-3">
-    <%= f.label :email, "メールアドレス", class: "col-2" %>
-    <%= f.email_field :email, autofocus: true, placeholder: "管理者e-mail", class: "col-4" %>
+    <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
+      <div class="row justify-content-center mb-3">
+        <%= f.label :email, "メールアドレス", class: "col-2" %>
+        <%= f.email_field :email, autofocus: true, placeholder: "管理者e-mail", class: "col-4" %>
+      </div>
+      <div class="row justify-content-center mb-3">
+        <%= f.label :password, "パスワード", class: "col-2" %>
+        <%= f.password_field :password, placeholder: "管理者パスワード", class: "col-4 mb-3" %>
+      </div>
+      <div class="actions row mb-5">
+        <div class="col-5"></div>
+          <%= f.submit "ログイン", class: "btn btn-md btn-primary px-5" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="row justify-content-center mb-3">
-    <%= f.label :password, "パスワード", class: "col-2" %>
-    <%= f.password_field :password, placeholder: "管理者パスワード", class: "col-4 mb-3" %>
-  </div>
-  <div class="row">
-    <div class="col-5"></div>
-  </div>
-
-  <div class="actions row mb-5">
-    <div class="col-5"></div>
-      <%= f.submit "ログイン", class: "btn btn-md btn-primary px-5" %>
-    </div>
-  </div>
-<% end %>
+</div>

@@ -1,7 +1,6 @@
-<div class="container">
-  <div class="row">
+<div class="row my-3">
     <div class="col-1"></div>
-    <h3 class="d-flex justify-content-left mb-5">新規会員登録</h3>
+    <h3 class="d-flex justify-content-left">新規会員登録</h3>
   </div>
   <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
     <%= render "layouts/errors", obj: resource %>
@@ -58,6 +57,3 @@
     <div class="col-1"></div>
     <%= render "public/shared/links" %>
   </div>
-</div>
-
-
