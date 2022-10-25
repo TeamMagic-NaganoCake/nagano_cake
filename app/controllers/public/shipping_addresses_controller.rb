@@ -3,7 +3,7 @@ class Public::ShippingAddressesController < ApplicationController
 
   def index
     @shipping_address   = ShippingAddress.new
-    @shipping_addresses = current_customer.shipping_addresses
+    @shipping_addresses = current_customer.shipping_addresses.all
   end
 
   def edit
@@ -17,7 +17,6 @@ class Public::ShippingAddressesController < ApplicationController
       flash[:notice] = "配送先が追加されました。"
     else
       @shipping_addresses = current_customer.shipping_addresses.all
-      render :index
     end
   end
 
@@ -33,9 +32,9 @@ class Public::ShippingAddressesController < ApplicationController
   end
 
   def destroy
-    shipping_addresses = ShippingAddress.find(params[:id])
-    shipping_addresses.destroy
-    redirect_to shipping_addresses_path
+    @shipping_addresses = current_customer.shipping_addresses.all
+    shipping_address = ShippingAddress.find(params[:id])
+    shipping_address.destroy
     flash[:notice] = "配送先削除が完了しました。"
   end
 
