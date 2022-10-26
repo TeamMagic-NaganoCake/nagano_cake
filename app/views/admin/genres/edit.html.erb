@@ -1,7 +1,11 @@
-<%= render "layouts/errors", obj: @genre %>
-<h4 class="my-3">ジャンル編集</h4>
-<%= form_with model: @genre, url: admin_genre_path do |f| %>
-  <%= f.label :genre_name, "ジャンル名", class: "small font-weight-bold mr-3" %>
-  <%= f.text_field :genre_name, class: "mr-3" %>
-  <%= f.submit "変更を保存", class: "btn btn-success"%>
-<% end %>
+<div class="row mt-3">
+  <div class="col-12 mx-auto">
+    <%= render "layouts/errors", obj: @genre %>
+    <h4 class="mb-3">ジャンル編集</h4>
+    <%= form_with model: @genre, url: admin_genre_path do |f| %>
+      <%= f.label :genre_name, "ジャンル名", class: "small font-weight-bold mr-3" %>
+      <%= f.text_field :genre_name, class: "mr-3" %>
+      <%= f.submit "変更を保存", class: "btn btn-success"%>
+    <% end %>
+ </div>
+</div>
