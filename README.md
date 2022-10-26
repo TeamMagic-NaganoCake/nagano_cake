@@ -1,24 +1,18 @@
-# README
+# ながのCAKE
+長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイトです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+顧客・管理者それぞれに必要なページや機能を有しています。
 
-Things you may want to cover:
+## 使い方
+1. .envファイルの作成
+2. SECRET_EMAILとSECRET_PASSWORDを設定
+3. bundle install
+4. yarn install
 
-* Ruby version
+## 環境
+* Rails 6.1.7
+* ruby 3.1.2
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 文責
+チームMagic
