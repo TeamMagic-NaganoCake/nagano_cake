@@ -1,6 +1,5 @@
 <div class="row my-3">
-  <div class="col-1"></div>
-  <h3 class="d-flex justify-content-left">注文履歴一覧</h3>
+  <h4 class="d-flex justify-content-left">注文履歴一覧</h4>
 </div>
 <table class="tabel table-bordered col-12">
   <thead>
@@ -29,7 +28,7 @@
         </td>
         <td><%= number_with_delimiter(order.billing_price.to_s) +"円" %></td>
         <td><%= order.order_status_i18n %></td>
-        <td><%= link_to "表示する", order_path(order), class: "btn btn-md btn-primary" %></td>
+        <td class="text-center"><%= link_to "表示する", order_path(order), class: "btn btn-md btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>

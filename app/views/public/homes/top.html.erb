@@ -22,7 +22,7 @@
         </h3>
         </div>
       </div>
-      <h2 class="mt-3">新着商品</h2>
+      <h2 class="mt-3"><strong>新着商品</strong></h2>
       <div class="d-flex">
       <% @items.last(4).each do |item| %>
         <div class="pr-3 pb-3 mt-3">
@@ -34,6 +34,8 @@
         </div>
        <% end %>
        </div>
-       <h6><%= link_to "全ての商品を見る>", items_path %></h6>
+       <div class="d-flex justify-content-end link_items">
+         <h6><%= link_to "全ての商品を見る>", items_path %></h6>
+       </div>
     </div>
 </div>

@@ -18,7 +18,7 @@
   </div>
 
   <div class="d-block pl-5 text-break" style="width: 400px;">
-    <h2><%= @item.item_name %></h2>
+    <h2><strong><%= @item.item_name %></strong></h2>
     <h4><%= simple_format(@item.item_body) %></h4>
     <h3>¥<%= number_with_delimiter @item.taxed_price %>(税込)</h3>
     <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
