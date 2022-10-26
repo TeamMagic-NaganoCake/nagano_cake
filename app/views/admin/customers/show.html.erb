@@ -33,7 +33,7 @@
           </tr>
           <tr>
             <th scope="row">会員ステータス</th>
-            <td><%= @customer.get_status %></td>
+            <td><%= render "admin/customers/customer_status", customer: @customer %></td>
           </tr>
           <tr>
             <th></th>
