@@ -3,6 +3,7 @@
 class Admin::UnlocksController < Devise::UnlocksController
   before_action :authenticate_admin!
   layout "admin_application"
+  
   # GET /resource/unlock/new
   # def new
   #   super

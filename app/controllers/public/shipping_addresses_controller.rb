@@ -14,7 +14,7 @@ class Public::ShippingAddressesController < ApplicationController
     @shipping_address = current_customer.shipping_addresses.new(shipping_address_params)
     if @shipping_address.save
       redirect_to shipping_addresses_path
-      flash[:notice] = "配送先が追加されました。"
+      flash[:notice]  = "配送先が追加されました。"
     else
       @shipping_addresses = current_customer.shipping_addresses.all
     end
@@ -24,7 +24,7 @@ class Public::ShippingAddressesController < ApplicationController
     @shipping_address = ShippingAddress.find(params[:id])
     if @shipping_address.update(shipping_address_params)
       redirect_to shipping_addresses_path
-      flash[:notice] = "配送先編集が完了しました。"
+      flash[:notice]  = "配送先編集が完了しました。"
     else
       render :edit
     end
@@ -33,12 +33,13 @@ class Public::ShippingAddressesController < ApplicationController
 
   def destroy
     @shipping_addresses = current_customer.shipping_addresses.all
-    shipping_address = ShippingAddress.find(params[:id])
+    shipping_address    = ShippingAddress.find(params[:id])
     shipping_address.destroy
-    flash[:notice] = "配送先削除が完了しました。"
+    flash[:notice]      = "配送先削除が完了しました。"
   end
 
   private
+
     def shipping_address_params
       params.require(:shipping_address).permit(:postcode, :address, :address_name)
     end
