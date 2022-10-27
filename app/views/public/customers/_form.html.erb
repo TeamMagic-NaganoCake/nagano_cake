@@ -31,9 +31,9 @@
   </div>
   <div class="row mb-3">
     <div class="col-3"></div>
-    <div class="actionss col-3">
-      <%= f.submit "更新内容を保存",class: 'btn btn-success btn-md' %>
-    </div>
-    <%=link_to "退会する",customers_confirm_path, class: "btn btn-md btn-danger" %>
+      <div class="actions">
+        <%= f.submit "更新内容を保存",class: 'btn btn-success btn-md' %>
+      </div>
+    <%=link_to "退会する",customers_confirm_path, class: "btn btn-md btn-danger ml-5" %>
   </div>
 <% end %>

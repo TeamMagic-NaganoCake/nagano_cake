@@ -3,7 +3,7 @@
     <%= render "layouts/errors", obj: @genre %>
     <h4 class="mb-3">ジャンル編集</h4>
     <%= form_with model: @genre, url: admin_genre_path, class: "row" do |f| %>
-      <%= f.label :genre_name, "ジャンル名", class: "small font-weight-bold col-1 mb-0 mr-5 d-flex align-items-center" %>
+      <%= f.label :genre_name, "ジャンル名", class: "field small font-weight-bold col-1 mb-0 mr-5 d-flex align-items-center" %>
       <%= f.text_field :genre_name, class: "col-2 ml-5 mr-5" %>
       <%= f.submit "変更を保存", class: "btn btn-success"%>
     <% end %>

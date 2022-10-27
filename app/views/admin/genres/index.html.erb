@@ -5,7 +5,7 @@
       <h4 class="mb-0">ジャンル一覧・追加</h4>
     </div>
     <%= form_with model: @genre, url: admin_genres_path, class: "row mb-3" do |f| %>
-      <%= f.label :genre_name, "ジャンル名", class: "small font-weight-bold col-1 mb-0 mr-5 d-flex align-items-center" %>
+      <%= f.label :genre_name, "ジャンル名", class: "field small font-weight-bold col-1 mb-0 mr-5 d-flex align-items-center" %>
       <%= f.text_field :genre_name, placeholder: "ジャンル名", class: "col-2 ml-5 mr-5" %>
       <%= f.submit "  新規登録  ", class: "btn btn-success btn-md" %>
     <% end %>
