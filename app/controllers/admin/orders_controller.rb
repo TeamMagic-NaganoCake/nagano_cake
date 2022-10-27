@@ -16,7 +16,6 @@ class Admin::OrdersController < ApplicationController
     @order.update(order_params)
     if  @order.order_status == "payment_comfirmation"
       @order.order_items.update_all(manufacture_status: "waiting_for_manufacture")
-      # redirect_to admin_order_path(@order)
     end
   end
 

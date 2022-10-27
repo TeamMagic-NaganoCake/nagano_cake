@@ -10,7 +10,6 @@ class Admin::OrderItemsController < ApplicationController
       @order.update(order_status: "producting")
     elsif @order_items.where(manufacture_status: "manufactured").count == @order_items.count
       @order.update(order_status: "shipping_preparation")
-      # redirect_to admin_order_path(order_item.order_id)
     end
   end
 
