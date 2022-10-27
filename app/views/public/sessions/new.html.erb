@@ -4,7 +4,7 @@
     <%= form_with model: @customer, url: customer_session_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
       <div class="row">
         <div class="col-1"></div>
-          <h5 class="text_aligin_left ml-7">会員の方はこちらからログイン</h5>
+        <h5 class="text_aligin_left ml-7">会員の方はこちらからログイン</h5>
       </div>
       <div class="field row justify-content-center mb-3">
         <%= f.label :email, "メールアドレス", class: "col-2" %>
@@ -18,16 +18,16 @@
       <div class="actions row mb-5 mt-3">
 
         <div class="col-5"></div>
-          <%= f.submit "ログイン", class: "btn btn-md btn-primary" %>
+        <%= f.submit "ログイン", class: "btn btn-md btn-primary" %>
       </div>
     <% end %>
     <div class="row">
       <div class="col-1"></div>
-        <h5>会員登録がお済みでない方</h5>
+      <h5>会員登録がお済みでない方</h5>
     </div>
     <div class="row">
       <div class="col-2"></div>
-        <%= render "public/shared/links" %>
+      <%= render "public/shared/links" %>
     </div>
   </div>
 </div>
