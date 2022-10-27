@@ -17,7 +17,7 @@
         </td>
         <td class="align-middle"><%= number_with_delimiter cart_item.item.taxed_price %></td>
         <td class="text-center align-middle">
-          <%= form_with model: cart_item, local: false do |f| %>
+          <%= form_with model: cart_item, local: true do |f| %>
             <%= f.select :amount, cart_item.amount_options, {selected: cart_item.amount}, {class: "select"} %>
             <%= f.submit "変更", class: "btn btn-success btn-sm" %>
           <% end %>
