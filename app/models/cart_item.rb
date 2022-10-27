@@ -14,7 +14,7 @@ class CartItem < ApplicationRecord
     (self.amount + 11).times do |count|
       options << [count, count]
     end
-    return options
+      return options
   end
 
   def self.total_price(customer)

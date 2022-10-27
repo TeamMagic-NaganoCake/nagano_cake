@@ -1,0 +1,18 @@
+<% cart_items.each do |cart_item| %>
+  <tr>
+    <td>
+      <%= image_tag cart_item.item.get_image(75, 50) %>
+      <%= cart_item.item.item_name %>
+    </td>
+    <td class="align-middle"><%= number_with_delimiter cart_item.item.taxed_price %></td>
+    <td id="cart_amount_<%= cart_item.id %>" class="text-center align-middle">
+      <%= render "form", cart_item: cart_item %>
+    </td>
+    <td id="sub_price_<%= cart_item.id %>" class="align-middle">
+      <%= render "sub_price", cart_item: cart_item %>
+    </td>
+    <td class="text-center align-middle">
+      <%= link_to "削除する", cart_item_path(cart_item), method: :delete, remote: true, class: "btn btn-danger btn-sm" %>
+    </td>
+  </tr>
+<% end %>
