@@ -17,7 +17,7 @@ class Public::CartItemsController < ApplicationController
     @cart_items  = current_customer.cart_items.all
     @cart_item.destroy
     @total_price = CartItem.total_price(current_customer)
-    unless @cart_items.exists?
+    if @cart_items.empty?
       redirect_to cart_items_path
     end
   end
