@@ -25,4 +25,5 @@ class Item < ApplicationRecord
   def self.search_for(content)
     Item.where("item_name LIKE?", "#{content}")
   end
+
 end
