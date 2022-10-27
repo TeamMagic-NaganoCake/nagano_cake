@@ -20,7 +20,7 @@
               <% end %>
             </td>
             <td><%= customer.email %></td>
-            <td><%= customer.get_status %></td>
+            <td><%= render "admin/customers/customer_status", customer: customer %></td>
           </tr>
           <% end %>
         </tbody>
