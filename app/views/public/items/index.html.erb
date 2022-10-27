@@ -22,8 +22,8 @@
           <%= link_to item_path(item)  do %>
             <%= image_tag item.get_image(250, 150) %>
           <% end %>
-          <p class="mt-2"><strong><%= item.item_name %></strong></p>
-          <p><strong>¥<%= number_with_delimiter item.taxed_price %></p></strong>
+          <h6 class="mt-1"><strong><%= item.item_name %></strong></h6>
+          <h6 class="mb-4"><strong>¥<%= number_with_delimiter item.taxed_price %></strong></h6>
         </div>
       <% end %>
       </div>

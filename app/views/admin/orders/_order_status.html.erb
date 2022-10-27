@@ -1,4 +1,4 @@
 <%= form_with model: order, url: admin_order_path(order), method: :patch, local: false do |f| %>
-  <%= f.select :order_status, Order.order_statuses.keys.map {|k| [I18n.t("enums.order.order_status.#{k}"), k]}, {}, {class: 'form'} %>
+  <%= f.select :order_status, Order.order_statuses.keys.map {|k| [I18n.t("enums.order.order_status.#{k}"), k]}, {}, {class: 'form select'} %>
   <%= f.submit "更新", class: "btn btn-sm btn-success ml-3" %>
 <% end %>

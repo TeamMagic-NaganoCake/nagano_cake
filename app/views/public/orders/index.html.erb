@@ -1,6 +1,5 @@
-<div class="row my-3">
-  <h4 class="d-flex justify-content-left">注文履歴一覧</h4>
-</div>
+<div class="row mt-3">
+  <h4 class="d-flex justify-content-left mb-3">注文履歴一覧</h4>
 <table class="tabel table-bordered col-12">
   <thead>
     <tr class="table-active">
@@ -33,3 +32,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
+<div class="d-flex justify-content-center">
+  <%= paginate @orders %>
+</div>
