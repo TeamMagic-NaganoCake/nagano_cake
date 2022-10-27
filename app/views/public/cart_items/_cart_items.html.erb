@@ -30,17 +30,17 @@
 </table>
 <div class="d-flex">
   <%= link_to "買い物を続ける", root_path, class: "btn btn-primary h-50 btn-md" %>
-    <div class="col-4 ml-auto">
-      <table class="table border-dark table-bordered">
-        <tbody>
-          <tr>
-            <th class="table-secondary">合計金額</th>
-            <td><%= number_with_delimiter total_price %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="col-4 ml-auto">
+    <table class="table border-dark table-bordered">
+      <tbody>
+        <tr>
+          <th class="table-secondary">合計金額</th>
+          <td><%= number_with_delimiter total_price %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="col-3 mx-auto">
-   <%= link_to "情報入力に進む", new_order_path, class: "btn btn-success btn-lg" %>
+  <%= link_to "情報入力に進む", new_order_path, class: "btn btn-success btn-lg" %>
 </div>
