@@ -1,9 +1,9 @@
 <%= form_with url: admin_searches_path, method: :get, class: "bg-white" do |f| %>
-<div class="input-group">
-  <%= f.text_field :content, placeholder: "Search", class: "form-control rounded-0 border-0" %>
-   <%= button_tag type: "submit", class: "btn rounded-0 border-0 input-group-btn" do %>
-     <i class="fa fa-search"></i>
-   <% end %>
-</div>
+  <div class="input-group">
+    <%= f.text_field :content, placeholder: "Search", class: "form-control rounded-0 border-0" %>
+    <%= button_tag type: "submit", class: "btn rounded-0 border-0 input-group-btn" do %>
+      <i class="fa fa-search"></i>
+    <% end %>
+  </div>
   <%= f.hidden_field :model, :value => "item" %>
 <% end %>
