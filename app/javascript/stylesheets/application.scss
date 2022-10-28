@@ -1,6 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import 'homes.scss';
 @import 'searches.scss';
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); //Dancing Script
 @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap'); //Sawarabi Mincho
@@ -8,7 +7,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
 @import 'homes.scss';
 @import 'footer.scss';
-@import 'header.scss';
 @import "items.scss";
 @import 'admin_customer_edit.scss';
 @import 'public_item_index.scss';
@@ -26,6 +24,8 @@ p, h6, h5, h4, h3, h2, th, td, .field, .actionss, .form-group,
 .btn-sm, .btn-md, .btn-lg, .custom-select-sm{
   font-family: 'Sawarabi Gothic', sans-serif;
 }
+
+@import 'header.scss';
 
 strong{
   font-weight: 100;
