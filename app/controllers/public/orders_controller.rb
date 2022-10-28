@@ -18,7 +18,7 @@ class Public::OrdersController < ApplicationController
       @order.order_address      = @shipping_address.address
       @order.order_address_name = @shipping_address.address_name
     else
-      unless params[:order][:order_postcode].empty? || params[:order][:order_address].empty? ||  params[:order][:order_address_name].empty?
+      unless params[:order][:order_postcode].empty? || params[:order][:order_address].empty? || params[:order][:order_address_name].empty?
         @order.order_postcode     = params[:order][:order_postcode]
         @order.order_address      = params[:order][:order_address]
         @order.order_address_name = params[:order][:order_address_name]
@@ -60,9 +60,9 @@ class Public::OrdersController < ApplicationController
   end
 
   private
-  
+
   def order_params
     params.require(:order).permit(:payment, :order_postcode, :order_address, :order_address_name, :billing_price)
   end
-  
+
 end
