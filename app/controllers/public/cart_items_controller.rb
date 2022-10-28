@@ -7,19 +7,15 @@ class Public::CartItemsController < ApplicationController
   end
 
   def update
-    @cart_item   = CartItem.find(params[:id])
-    @cart_item.update(cart_item_params)
-    @total_price = CartItem.total_price(current_customer)
+    cart_item   = CartItem.find(params[:id])
+    cart_item.update(cart_item_params)
+    redirect_to cart_items_path
   end
 
   def destroy
-    @cart_item   = CartItem.find(params[:id])
-    @cart_items  = current_customer.cart_items.all
-    @cart_item.destroy
-    @total_price = CartItem.total_price(current_customer)
-    if @cart_items.empty?
-      redirect_to cart_items_path
-    end
+    cart_item   = CartItem.find(params[:id])
+    cart_item.destroy
+    redirect_to cart_items_path
   end
 
   def destroy_all
