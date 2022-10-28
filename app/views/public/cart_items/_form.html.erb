@@ -1,4 +1,0 @@
-<%= form_with model: cart_item, local: false do |f| %>
-  <%= f.select :amount, cart_item.amount_options, {selected: cart_item.amount}, {class: "select"} %>
-  <%= f.submit "変更", class: "btn btn-success btn-sm" %>
-<% end %>
