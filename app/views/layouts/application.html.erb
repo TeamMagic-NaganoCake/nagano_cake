@@ -11,9 +11,17 @@
   </head>
 
   <body>
+    <%= render 'public/header' %>
     <main>
       <p id="notice"><%= notice %></p>
-      <%= yield %>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-12'>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
     </main>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

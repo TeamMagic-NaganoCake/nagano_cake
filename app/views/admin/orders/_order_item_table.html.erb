@@ -1,0 +1,11 @@
+<% order_items.each do |order_item| %>
+  <tr>
+    <td><%= order_item.item.item_name %></td>
+    <td><%= order_item.nochange_taxed_price %></td>
+    <td><%= order_item.amount %></td>
+    <td><%= number_with_delimiter(order_item.nochange_taxed_price * order_item.amount) %></td>
+    <td class="manufacture_status_<%= order_item.id %>">
+      <%= render "admin/order_items/manufacture_status", order_item: order_item %>
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,41 @@
+<%= form_with model: customer, url: admin_customer_path, method: :patch, local: false do |f| %>
+  <%= render "layouts/errors", obj: customer %>
+  <div class="mb-3 field">
+    <%= f.label :customer, "会員ID", class: "col-2" %>
+    <%= customer.id %>
+  </div>
+  <div class="mb-3 field">
+    <%= f.label :last_name, "氏名", class: "col-2" %>
+    <%= f.text_field :last_name, autofocus: true, class: "col-3" %>
+    <%= f.text_field :first_name, class: "col-3" %>
+  </div>
+  <div class="mb-3 field">
+    <%= f.label :last_name_kana, "フリガナ", class: "col-2" %>
+    <%= f.text_field :last_name_kana, class: "col-3" %>
+    <%= f.text_field :first_name_kana, class: "col-3" %>
+  </div>
+  <div class="mb-3 field">
+    <%= f.label :postcode, "郵便番号", class: "col-2" %>
+    <%= f.text_field :postcode, class: "col-3" %>
+   </div>
+   <div class="mb-3 field">
+     <%= f.label :address, "住所", class: "col-2" %>
+     <%= f.text_field :address, class: "col-8" %>
+   </div>
+   <div class="mb-3 field">
+     <%= f.label :phone_number, "電話番号", class: "col-2" %>
+     <%= f.text_field :phone_number, class: "col-3" %>
+   </div>
+   <div class="mb-3 field">
+     <%= f.label :email, "メールアドレス", class: "col-2" %>
+     <%= f.text_field :email, class: "col-3" %>
+   </div>
+   <div class="mb-3 field">
+     <%= f.label :customer_status, "会員ステータス", class: "col-2" %>
+     <%= f.radio_button :customer_status, :false, checked: true %>
+     <%= f.label :customer_status, "有効" %>
+     <%= f.radio_button :customer_status, :true, class: "ml-3" %>
+     <%= f.label :customer_status, "退会" %>
+   </div>
+   <%= f.submit "変更を保存", class: "btn btn-success btn-md" %>
+ <% end %>

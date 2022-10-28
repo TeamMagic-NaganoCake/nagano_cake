@@ -1,2 +1,7 @@
-<h1>Public::Customers#edit</h1>
-<p>Find me in app/views/public/customers/edit.html.erb</p>
+<div class="row my-3">
+  <h4 class="d-flex justify-content-left">会員情報編集</h4>
+</div>
+<div class="errors">
+  <%= render "layouts/errors", obj: @customer %>
+</div>
+<%= render "form", customer: @customer %>
