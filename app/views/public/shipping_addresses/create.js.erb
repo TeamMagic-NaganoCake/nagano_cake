@@ -1,2 +1,5 @@
-$('.errors').html("<%= j(render 'layouts/errors', obj: @shipping_address) %>")
 $('#address_index').html("<%= j(render 'index', shipping_addresses: @shipping_addresses) %>")
+$('#shipping_address_postcode').val("");
+$('#shipping_address_address').val("");
+$('#shipping_address_address_name').val("");
+$('#notice').html("<%= j(notice) %>");

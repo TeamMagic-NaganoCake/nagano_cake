@@ -12,11 +12,11 @@ class Public::ShippingAddressesController < ApplicationController
 
   def create
     @shipping_address = current_customer.shipping_addresses.new(shipping_address_params)
+    @shipping_addresses = current_customer.shipping_addresses.all
     if @shipping_address.save
-      redirect_to shipping_addresses_path
       flash[:notice]  = "配送先が追加されました。"
     else
-      @shipping_addresses = current_customer.shipping_addresses.all
+      render :create_error
     end
   end
 
